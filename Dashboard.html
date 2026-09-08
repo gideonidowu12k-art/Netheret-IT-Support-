@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netheret IT - Dashboard</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <!-- Top Accessibility Controls -->
+  <aside class="accessibility-bar" aria-label="Accessibility Settings">
+    <span><strong>Netheret Accessibility Hub</strong></span>
+    <div class="a11y-controls">
+      <button onclick="toggleContrast()">High Contrast Mode</button>
+    </div>
+  </aside>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <span class="brand-icon"></span>
+          Netheret
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="Dashboard.html" class="active">Overview</a></li>
+          <li class="nav-item"><a href="Ticket.html">Support Requests</a></li>
+          <li class="nav-item"><a href="#schedules">On-Site Schedules</a></li>
+          <li class="nav-item"><a href="#kb">Knowledge Base</a></li>
+          <li class="nav-item"><a href="#analytics">Performance</a></li>
+        </ul>
+      </div>
+      <a href="Login.html" class="logout-link">Log out</a>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+      <header class="top-header">
+        <h2>Dashboard</h2>
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" placeholder="Search tickets, clients, requests...">
+        </div>
+        <div class="user-profile">
+          <div class="avatar">N</div>
+        </div>
+      </header>
+
+      <!-- Key Metrics Row -->
+      <section class="metrics-row">
+        <div class="card-metric blue">
+          <h4>Active Requests</h4>
+          <div class="metric-value">428</div>
+        </div>
+        <div class="card-metric light-blue">
+          <h4>Total Clients</h4>
+          <div class="metric-value">16,601</div>
+        </div>
+        <div class="card-metric teal">
+          <h4>Tier 1 Fix Rate</h4>
+          <div class="metric-value">68%</div>
+        </div>
+        <div class="card-metric yellow">
+          <h4>SLA Resolution</h4>
+          <div class="metric-value">98%</div>
+        </div>
+      </section>
+
+      <!-- Grid Row 1 -->
+      <section class="dashboard-grid">
+        <!-- Bar Chart Card -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Request Trends</span>
+            <button class="dropdown-pill">This year ▾</button>
+          </div>
+          <div class="bar-chart">
+            <div class="chart-column"><div class="bars-group"><div class="bar teal" style="height: 60%;"></div><div class="bar yellow" style="height: 40%;"></div><div class="bar navy" style="height: 20%;"></div></div><span class="x-label">Jan</span></div>
+            <div class="chart-column"><div class="bars-group"><div class="bar teal" style="height: 80%;"></div><div class="bar yellow" style="height: 50%;"></div><div class="bar navy" style="height: 30%;"></div></div><span class="x-label">Feb</span></div>
+            <div class="chart-column"><div class="bars-group"><div class="bar teal" style="height: 70%;"></div><div class="bar yellow" style="height: 40%;"></div><div class="bar navy" style="height: 25%;"></div></div><span class="x-label">Mar</span></div>
+            <div class="chart-column"><div class="bars-group"><div class="bar teal" style="height: 50%;"></div><div class="bar yellow" style="height: 30%;"></div><div class="bar navy" style="height: 10%;"></div></div><span class="x-label">Apr</span></div>
+            <div class="chart-column"><div class="bars-group"><div class="bar teal" style="height: 85%;"></div><div class="bar yellow" style="height: 60%;"></div><div class="bar navy" style="height: 40%;"></div></div><span class="x-label">May</span></div>
+            <div class="chart-column"><div class="bars-group"><div class="bar teal" style="height: 90%;"></div><div class="bar yellow" style="height: 55%;"></div><div class="bar navy" style="height: 50%;"></div></div><span class="x-label">Jun</span></div>
+          </div>
+        </div>
+
+        <!-- Donut Chart Card -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Service Tiers</span>
+          </div>
+          <div class="donut-wrapper">
+            <div class="donut-chart">
+              <div class="donut-center">
+                342
+                <span>JOBS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier Activity List -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Recent Tickets</span>
+          </div>
+          <ul class="data-list">
+            <li class="data-item"><span>S. Evergreen</span><strong>+#49</strong></li>
+            <li class="data-item"><span>B. Sterling</span><strong>+#99</strong></li>
+            <li class="data-item"><span>O. Meadows</span><strong>+#19</strong></li>
+            <li class="data-item"><span>H. Hawthorne</span><strong>+#19</strong></li>
+          </ul>
+          <a href="Ticket.html"><button class="btn-action">View all tickets</button></a>
+        </div>
+      </section>
+
+      <!-- Grid Row 2 -->
+      <section class="grid-bottom">
+        <!-- Support Tickets List -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Support Requests</span>
+            <button class="dropdown-pill">This week ▾</button>
+          </div>
+          <div class="filter-pills">
+            <button class="pill active">All</button>
+            <button class="pill">Open</button>
+            <button class="pill">Pending</button>
+            <button class="pill">Closed</button>
+          </div>
+          <ul class="data-list">
+            <li class="data-item">
+              <div class="data-info"><span class="dot yellow"></span>jessica.s@netheret.com</div>
+              <strong>Login Issue</strong>
+              <span class="badge-status status-open">OPEN</span>
+            </li>
+            <li class="data-item">
+              <div class="data-info"><span class="dot teal"></span>david.j@netheret.com</div>
+              <strong>Infrastructure Audit</strong>
+              <span class="badge-status status-pending">PENDING</span>
+            </li>
+            <li class="data-item">
+              <div class="data-info"><span class="dot teal"></span>emily.w@netheret.com</div>
+              <strong>Switch Malfunction</strong>
+              <span class="badge-status status-closed">CLOSED</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Performance / Map Placeholder Card -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">On-Site Distribution</span>
+          </div>
+          <div style="height: 140px; background: var(--bg-app); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: bold;">
+            Regional On-Site Support Coverage Map
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+  </script>
+</body>
+</html>

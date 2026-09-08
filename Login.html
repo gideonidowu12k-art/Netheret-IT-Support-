@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Netheret IT Support</title>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    body.login-page {
+      background-color: var(--deep-navy);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .login-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body class="login-page">
+
+  <div class="login-card">
+    <div class="brand" style="color: var(--deep-navy); justify-content: center; margin-bottom: 1.5rem;">
+      <span class="brand-icon" style="background: var(--deep-navy);"></span>
+      Netheret IT
+    </div>
+    <form action="Dashboard.html">
+      <div style="margin-bottom: 1rem;">
+        <label style="display:block; font-weight:bold; margin-bottom:0.3rem;">Staff ID / Email</label>
+        <input type="text" required placeholder="tech@netheret.com" style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc;">
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display:block; font-weight:bold; margin-bottom:0.3rem;">Password</label>
+        <input type="password" required placeholder="••••••••" style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc;">
+      </div>
+      <button type="submit" class="btn-action">Sign In</button>
+    </form>
+  </div>
+
+  <script>
+    const loginImages = ['image_0.png', 'image_1.png', 'image_2.png', 'image_3.png', 'image_4.png'];
+    window.onload = function() {
+      const img = loginImages[Math.floor(Math.random() * loginImages.length)];
+      document.body.style.backgroundImage = `url('${img}')`;
+    };
+  </script>
+</body>
+</html>

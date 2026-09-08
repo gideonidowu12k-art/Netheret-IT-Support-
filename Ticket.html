@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netheret IT - Log Support Request</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <aside class="accessibility-bar" aria-label="Accessibility Settings">
+    <span><strong>Netheret Accessibility Hub</strong></span>
+    <div class="a11y-controls">
+      <button onclick="toggleContrast()">High Contrast Mode</button>
+    </div>
+  </aside>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <span class="brand-icon"></span>
+          Netheret
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="Dashboard.html">Overview</a></li>
+          <li class="nav-item"><a href="Ticket.html" class="active">Support Requests</a></li>
+          <li class="nav-item"><a href="Dashboard.html#schedules">On-Site Schedules</a></li>
+          <li class="nav-item"><a href="Dashboard.html#kb">Knowledge Base</a></li>
+        </ul>
+      </div>
+      <a href="Login.html" class="logout-link">Log out</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <h2>Log IT Technical Support Request</h2>
+      </header>
+
+      <div class="card" style="max-width: 700px;">
+        <form id="ticket-form" onsubmit="event.preventDefault(); submitTicket();">
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-weight:bold; margin-bottom: 0.3rem;">Client / Business Name</label>
+            <input type="text" id="client-name" required placeholder="e.g., Apex Logistics" style="width:100%; padding: 0.6rem; border-radius:8px; border:1px solid var(--border-color);">
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-weight:bold; margin-bottom: 0.3rem;">Service Category</label>
+            <select id="service-type" required style="width:100%; padding: 0.6rem; border-radius:8px; border:1px solid var(--border-color);">
+              <option value="Help Desk Services (Tier 1)">Help Desk Services (Tier 1)</option>
+              <option value="Infrastructure Maintenance (Tier 2)">Infrastructure Maintenance (Tier 2)</option>
+              <option value="Design & Installation (Tier 3)">Infrastructure Design & Installation (Tier 3)</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-weight:bold; margin-bottom: 0.3rem;">Request Details</label>
+            <textarea id="ticket-desc" rows="4" required placeholder="Describe technical requirements..." style="width:100%; padding: 0.6rem; border-radius:8px; border:1px solid var(--border-color);"></textarea>
+          </div>
+          <button type="submit" class="btn-action">Submit Ticket</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+    function submitTicket() {
+      alert("Ticket successfully logged.");
+      document.getElementById('ticket-form').reset();
+    }
+  </script>
+</body>
+</html>
